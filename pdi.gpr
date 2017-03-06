@@ -1,0 +1,13 @@
+project PDI is
+   for Main use ("define_pdi.adb",  --  Generation of binary PDI file
+                 "print_pdi.adb"    --  Example of application
+                 );
+
+   package Compiler is
+      for Default_Switches ("ada") use
+         ("-gnat2012",  --  For older GNAT versions (now default)
+          "-gnata",     --  To execute assertions at run time
+          "-gnateF"     --  To check floating-point bounds at run time
+          );
+   end Compiler;
+end PDI;
